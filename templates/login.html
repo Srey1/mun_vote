@@ -1,0 +1,42 @@
+<html>
+    <style>
+        input {
+          padding:10px;
+          border-radius: 5px;
+          box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+          text-align: center;
+          border-radius:30px;
+          width: 500px;
+          border-color: black;
+        }
+
+        .button_style {
+            padding:10px;
+            border-radius: 5px;
+            box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+            text-align: center;
+            border-radius:30px;
+            width: 500px;
+            color: white;
+            background-color: blue;
+            border-color: black;
+
+        }
+
+
+    </style>
+    <body>
+        <form action="/login" method="post">
+        <div>
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <br>
+        <div>
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <br>
+        <button class = "button_style" type="submit">Log In</button>
+    </form>
+    </body>
+</html>
+

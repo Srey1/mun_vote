@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+select {
+  width: 100%;
+  padding:10px;
+  border-radius:10px;
+}
+</style>
+<body>
+
+<ul>
+  <li class="nav-item"><a class="nav-link" href="/voting">Vote</a></li>
+  <li class="nav-item"><a class="nav-link" href="/">Results</a></li>
+  <li><a href="/voting">Vote</a></li>
+
+</ul>
+        <form action="/voting" method="post">
+
+
+        <label for="sym">Please Cast Your Vote</label>
+        <br>
+        <select  name = "vote">
+            {% for opt in range(0, 3) %}
+            <option>{{ options[opt] }}</option>
+            {% endfor %}
+         </select>
+         <br>
+
+      <input class="btn btn-primary" type="submit" value="Vote">
+    </form>
+
+    </body>
+</html>
+

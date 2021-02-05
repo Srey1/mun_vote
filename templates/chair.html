@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <meta http-equiv="refresh" content="4">
+
+    <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+
+    #red_bubble {
+      border-radius: 30px;
+      background: red;
+      padding: 10px;
+      width: 150px;
+
+    }
+    #green_bubble {
+      border-radius: 30px;
+      background: lime;
+      padding: 10px;
+      width: 150px;
+
+    }
+    #orange_bubble {
+      border-radius: 30px;
+      background: orange;
+      padding: 10px;
+      width: 150px;
+
+    }
+
+    #blue_bubble {
+      border-radius: 30px;
+      background: blue;
+      padding: 10px;
+      width: 150px;
+
+    }
+
+    #top_left {
+      border-radius: 30px;
+      background: red;
+      padding: 7px;
+      width: 130px;
+      position: absolute;
+      top: 8px;
+      right: 16px;
+    }
+
+    table{
+      border-collapse: collapse;
+    }
+
+    th {
+      background: #42e6f5;
+    }
+
+    tr:nth-of-type(odd) {
+      background-color: #f3f3f3;
+    }
+
+    .white{
+      color: white;
+    }
+
+    .table_style{
+      border: 1px solid black;
+      padding: 15;
+      margin: 70px 0;
+      min-width: 70px;
+      text-align: center;
+    }
+
+    #alldown_bubble {
+      border-radius: 10px;
+      background: purple;
+      padding: 10px;
+      width: 150px;
+      color: white;
+      margin-top: 20px;
+      margin-left: 520px;
+
+    }
+
+    .country_table{
+      border: 0px;
+      padding: 50;
+      margin: 10px 0;
+      min-width: 800px;
+      float: right;
+      margin-right:100px;
+      margin-top: 20px;
+      font-size: 20px;
+      text-align: center;
+
+    }
+    </style>
+    <form action="/quickrefresh" method="post">
+            <button id = "top_left" class="white" type="submit">Quick Refresh</button>
+        </form>
+    <body>
+      <ul>
+      </ul>
+      <br>
+        <form action="/chair" method="post">
+            <button id = "blue_bubble" class="white" type="submit">Clear Vote</button>
+        </form>
+
+        <br>
+        <br>
+
+        <form action="/alldown" method="post">
+            <button id = "alldown_bubble" class="white" type="submit">Lower All Hands</button>
+        </form>
+
+        <table class = "country_table">
+          <tr>
+            <th>Country</th>
+            <th>Type</th>
+          </tr>
+          {% for row in range(0, number_track) %}
+              <tr>
+                  <td>{{ country_hand[row] }}</td>
+                  <td>{{ type_hand[row] }}</td>
+              </tr>
+           {% endfor %}
+
+
+
+        </table>
+
+
+        <p id = "green_bubble">In Favor: {{ forr }}</p>
+        <p id = "orange_bubble">Abstention: {{ obstain }}</p>
+        <p id = "red_bubble">Against: {{ agains }}</p>
+        <table class = "table_style">
+          <tr>
+              <th class = "table_style">Country</th>
+              <th class = "table_style">Vote</th>
+          </tr>
+          {% for row in range(0, amt) %}
+              <tr>
+                  <td class = "table_style">{{ final_count[row] }}</td>
+                  <td class = "table_style">{{ final_vote[row] }}</td>
+              </tr>
+           {% endfor %}
+
+         </table>
+
+    </body>
+</html>
+

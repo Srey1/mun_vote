@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <meta http-equiv="refresh" content="8">
+
+
+    <style>
+
+.row {
+  display: flex;
+  margin-left:-5px;
+  margin-right:-5px;
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+#red_bubble {
+  border-radius: 30px;
+  background: red;
+  padding: 10px;
+  width: 150px;
+
+}
+#green_bubble {
+  border-radius: 30px;
+  background: lime;
+  padding: 10px;
+  width: 150px;
+
+}
+
+#space {
+  margin-top: 45px;
+}
+#orange_bubble {
+  border-radius: 30px;
+  background: orange;
+  padding: 10px;
+  width: 150px;
+
+}
+
+#uphand_bubble {
+  border-radius: 10px;
+  background: blue;
+  padding: 10px;
+  width: 150px;
+  color: white;
+  margin-top: 20px;
+  margin-left: 520px;
+
+}
+
+#downhand_bubble {
+  border-radius: 10px;
+  background: red;
+  padding: 10px;
+  width: 100px;
+  color: white;
+  margin-top: 10px;
+  margin-left: 300px;
+
+
+}
+
+.floated {
+   float:left;
+   margin-right: -90px;
+   margin-left: 1000px;
+   margin-top: 20px;
+   display: inline-block;
+}
+
+
+
+.table_style{
+  border: 1px solid black;
+  padding: 15;
+  margin: 70px 0;
+  min-width: 70px;
+  text-align: center;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+th {
+  background: #42e6f5;
+}
+
+tr:nth-of-type(odd) {
+  background-color: #f3f3f3;
+}
+
+.country_table{
+  border: 0px;
+  padding: 50;
+  margin: 10px 0;
+  min-width: 800px;
+  float: right;
+  margin-right:100px;
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.white{
+    color: white;
+}
+
+
+
+
+</style>
+
+
+    <body>
+        <ul>
+          <li class="nav-item"><a class="nav-link" href="/voting">Vote</a></li>
+          <li class="nav-item"><a class="nav-link" href="/">Results</a></li>
+        </ul>
+
+        <form action="/quickraise" method="post">
+            <button id = "uphand_bubble" class="white" type="submit">Raise/Lower Hand</button>
+        </form>
+
+        <table class = "country_table">
+          <tr>
+            <th>Country</th>
+            <th>Type</th>
+          </tr>
+          {% for row in range(0, number_track) %}
+              <tr>
+                  <td>{{ country_hand[row] }}</td>
+                  <td>{{ type_hand[row] }}</td>
+              </tr>
+           {% endfor %}
+
+
+
+        </table>
+
+
+
+        <p id = "green_bubble">In Favor: {{ forr }}</p>
+        <p id = "orange_bubble">Abstention: {{ obstain }}</p>
+        <p id = "red_bubble">Against: {{ agains }}</p>
+
+
+
+
+
+        <table class = "table_style">
+          <tr>
+              <th class = "table_style">Country</th>
+              <th class = "table_style">Vote</th>
+          </tr>
+          {% for row in range(0, amt) %}
+              <tr>
+                  <td class = "table_style">{{ final_count[row] }}</td>
+                  <td class = "table_style">{{ final_vote[row] }}</td>
+              </tr>
+           {% endfor %}
+
+         </table>
+
+
+
+    </body>
+</html>
+

@@ -1,0 +1,63 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+select {
+  width: 50%;
+  padding:10px;
+  border-radius:10px;
+}
+</style>
+<body>
+
+<ul>
+  <li class="nav-item"><a class="nav-link" href="/voting">Vote</a></li>
+  <li class="nav-item"><a class="nav-link" href="/">Results</a></li>
+
+</ul>
+        <form action="/raise" method="post">
+
+
+        <label for="sym">Please Select the Type</label>
+        <br>
+        <select  name = "raise_type">
+            <option>Point of Information(POI)</option>
+            <option>Speech</option>
+            <option>Amendment</option>
+            <option>Amendment to the Second Degree</option>
+
+         </select>
+         <br>
+
+      <input type="submit" value="Vote">
+    </form>
+
+    </body>
+</html>
+
