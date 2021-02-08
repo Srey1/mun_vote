@@ -16,7 +16,7 @@ app.secret_key = os.urandom(24)
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-db = SQL(os.getenv("postgres://mxsfehzqzqjrkh:10a6f94bdc32c5dc375a642c91cff6ad7b8e61efac5ed75ee098072757f4ddd7@ec2-54-74-14-109.eu-west-1.compute.amazonaws.com:5432/d814kubs32mvs1"))
+db = SQL(os.getenv(""))
 
 # Ensure responses aren't cached
 @app.after_request
