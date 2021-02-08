@@ -16,7 +16,7 @@ app.secret_key = os.urandom(24)
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-db = SQL(os.getenv(""))
+db = SQL(os.getenv("DATABASE_URL"))
 
 # Ensure responses aren't cached
 @app.after_request
