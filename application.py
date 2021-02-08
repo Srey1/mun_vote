@@ -16,7 +16,7 @@ app.secret_key = os.urandom(24)
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-db = SQL("sqlite:///finance.1.db")
+db = SQL("sqlite:///mun.db")
 
 # Ensure responses aren't cached
 @app.after_request
