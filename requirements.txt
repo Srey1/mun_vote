@@ -7,3 +7,4 @@ Jinja2==2.9.6
 psycopg2==2.7.3.2
 SQLAlchemy==1.1.15
 Werkzeug==0.12.2
+cs50
